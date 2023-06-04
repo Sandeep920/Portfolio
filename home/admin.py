@@ -4,6 +4,15 @@ from .models import *
 # Register your models here.
 admin.site.register(Contact)
 admin.site.register(Blog)
-admin.site.register(About)
+
+
+
+class AboutAdmin(admin.ModelAdmin):
+    list_display = ('age', 'birthday', 'phone', 'email', 'city')
+    search_fields = ('email', 'city')
+
+admin.site.register(About, AboutAdmin)
+
+
 
 
